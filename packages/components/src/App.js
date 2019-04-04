@@ -1,49 +1,50 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React from "react";
+import { StatusBar, StyleSheet, Text, View } from "react-native";
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to react-native-web + monorepo!</Text>
-        <Text style={styles.instructions}>This component is being shared between iOS, Android & Web.</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
-  }
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <StatusBar backgroundColor="#9b0000" />
+      <View style={styles.header} />
+      <Text style={styles.welcome}>Welcome to React Native</Text>
+      <Text style={styles.instructions}>
+        This component is being shared between iOS, Android & Web.
+      </Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white"
+  },
+  header: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: 56,
+    backgroundColor: "#d50000",
+    elevation: 2,
+    shadowOffset: { width: 1, height: 1 },
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowRadius: 2
   },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    color: "#2d2d2d",
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: 10
   },
   instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    color: "#2d2d2d",
+    fontSize: 16,
+    textAlign: "center",
+    marginBottom: 5
+  }
 });
